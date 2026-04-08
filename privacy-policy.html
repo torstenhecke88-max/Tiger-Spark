@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Tiger Spark</title>
+  <meta name="description" content="Official Tiger Spark information page for App Store Connect reviewers and users.">
+  <meta name="theme-color" content="#0b172a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --bg:#08111f;
+  --bg2:#0e1b32;
+  --card:rgba(255,255,255,.08);
+  --card-strong:rgba(255,255,255,.12);
+  --text:#eef4ff;
+  --muted:#b2c3df;
+  --line:rgba(255,255,255,.14);
+  --accent:#ffb347;
+  --accent2:#7ee7ff;
+  --accent3:#9b8cff;
+  --success:#79f2a3;
+  --danger:#ffc4a4;
+  --shadow:0 18px 60px rgba(0,0,0,.28);
+  --radius:24px;
+  --radius-sm:18px;
+  --max:1160px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,179,71,.18), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(126,231,255,.16), transparent 25%),
+    radial-gradient(circle at 70% 80%, rgba(155,140,255,.16), transparent 30%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.bg-grid{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.45), transparent 88%);
+}
+
+.orb{
+  position:fixed;
+  width:38vmax;
+  height:38vmax;
+  border-radius:50%;
+  filter:blur(40px);
+  opacity:.12;
+  pointer-events:none;
+  z-index:0;
+}
+.orb.one{background:var(--accent); top:-8vmax; left:-9vmax; animation:float1 18s ease-in-out infinite}
+.orb.two{background:var(--accent2); bottom:-12vmax; right:-10vmax; animation:float2 22s ease-in-out infinite}
+.orb.three{background:var(--accent3); top:30vh; right:10vw; width:20vmax; height:20vmax; opacity:.1; animation:float3 16s ease-in-out infinite}
+
+@keyframes float1{50%{transform:translate(4vw,5vh) scale(1.06)}}
+@keyframes float2{50%{transform:translate(-5vw,-3vh) scale(1.08)}}
+@keyframes float3{50%{transform:translate(-2vw,4vh) scale(.94)}}
+
+a{color:inherit;text-decoration:none}
+.container{
+  width:min(var(--max), calc(100% - 28px));
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter:blur(16px);
+  background:rgba(7,14,26,.48);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.brand-mark{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  position:relative;
+  background:
+    radial-gradient(circle at 30% 30%, #fff6, transparent 25%),
+    linear-gradient(135deg, var(--accent), var(--accent2) 55%, var(--accent3));
+  box-shadow:0 8px 24px rgba(126,231,255,.26);
+  overflow:hidden;
+}
+.brand-mark::before,
+.brand-mark::after{
+  content:"";
+  position:absolute;
+  inset:auto;
+  border-radius:999px;
+  background:rgba(255,255,255,.75);
+}
+.brand-mark::before{width:22px;height:3px;top:14px;left:9px;transform:rotate(-22deg)}
+.brand-mark::after{width:15px;height:3px;top:24px;left:14px;transform:rotate(18deg)}
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.nav-links a{
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  border-radius:999px;
+  color:var(--muted);
+  transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  transform:translateY(-1px);
+  color:var(--text);
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.22);
+}
+
+.hero{
+  padding:40px 0 18px;
+}
+.hero-panel{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  padding:26px;
+}
+.hero-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255,255,255,.16), transparent 28%),
+    linear-gradient(120deg, transparent 0 35%, rgba(255,255,255,.08) 48%, transparent 62%);
+  pointer-events:none;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:var(--muted);
+  font-size:.95rem;
+}
+.pulse{
+  width:10px;height:10px;border-radius:50%;
+  background:linear-gradient(135deg,var(--success),var(--accent2));
+  box-shadow:0 0 0 0 rgba(121,242,163,.45);
+  animation:pulse 1.9s infinite;
+}
+@keyframes pulse{70%{box-shadow:0 0 0 14px rgba(121,242,163,0)}100%{box-shadow:0 0 0 0 rgba(121,242,163,0)}}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:20px;
+  align-items:stretch;
+  margin-top:18px;
+}
+.hero h1{
+  margin:14px 0 10px;
+  font-size:clamp(2rem, 6vw, 4rem);
+  line-height:.98;
+  letter-spacing:-.03em;
+}
+.hero p.lead{
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.72;
+  max-width:64ch;
+}
+.cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:13px 18px;
+  border-radius:16px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.12);
+  transition:transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.button.primary{
+  color:#0a1424;
+  background:linear-gradient(135deg, var(--accent), #ffd48a 42%, var(--accent2));
+  border-color:transparent;
+}
+.button.secondary{
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+}
+.button:hover{transform:translateY(-2px)}
+
+.stats, .grid{
+  display:grid;
+  gap:16px;
+}
+.stats{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+.card::after{
+  content:"";
+  position:absolute;
+  inset:auto -20% -65% auto;
+  width:180px;height:180px;
+  background:radial-gradient(circle, rgba(255,255,255,.09), transparent 60%);
+  pointer-events:none;
+}
+.card h2, .card h3{
+  margin:0 0 10px;
+  letter-spacing:-.02em;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+}
+.metric{
+  font-size:2rem;
+  font-weight:900;
+  letter-spacing:-.04em;
+}
+.metric-label{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+section{
+  padding:22px 0;
+}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:12px;
+  margin-bottom:14px;
+}
+.section-head h2{
+  margin:0;
+  font-size:clamp(1.5rem, 3vw, 2.3rem);
+  letter-spacing:-.03em;
+}
+.section-head p{
+  margin:0;
+  color:var(--muted);
+}
+.kicker{
+  color:var(--accent2);
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  margin-bottom:8px;
+}
+.list{
+  display:grid;
+  gap:12px;
+  margin-top:14px;
+}
+.list-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:14px;
+  border-radius:18px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+}
+.list-icon{
+  flex:0 0 34px;
+  width:34px;height:34px;border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg, rgba(255,179,71,.24), rgba(126,231,255,.22));
+  border:1px solid rgba(255,255,255,.12);
+  font-weight:900;
+}
+.chips{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;
+}
+.chip{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.11);
+  background:rgba(255,255,255,.05);
+  color:var(--muted);
+}
+.mail-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  padding:16px 18px;
+  background:linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+}
+.mail-box code{
+  font-size:.98rem;
+  background:rgba(255,255,255,.06);
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--text);
+  word-break:break-all;
+}
+.footer{
+  padding:24px 0 42px;
+  color:var(--muted);
+}
+.footer-card{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  padding:18px 20px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+}
+.small{font-size:.95rem;color:var(--muted)}
+.timeline{
+  position:relative;
+  display:grid;
+  gap:14px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  top:6px; bottom:6px; left:16px;
+  width:2px; background:linear-gradient(var(--accent2), transparent);
+  opacity:.55;
+}
+.step{
+  position:relative;
+  padding-left:46px;
+}
+.step::before{
+  content:"";
+  position:absolute;
+  left:8px; top:6px;
+  width:18px;height:18px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 0 5px rgba(126,231,255,.08);
+}
+.notice{
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(121,242,163,.09);
+  border:1px solid rgba(121,242,163,.18);
+  color:#dff7e8;
+}
+.warn{
+  background:rgba(255,196,164,.08);
+  border-color:rgba(255,196,164,.16);
+  color:#fff0e6;
+}
+.tilt{
+  transform-style:preserve-3d;
+  transition:transform .18s ease;
+}
+.tilt .depth{
+  transform:translateZ(28px);
+}
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+hr.sep{
+  border:none;
+  border-top:1px solid rgba(255,255,255,.09);
+  margin:18px 0;
+}
+@media (max-width:920px){
+  .hero-grid, .stats, .grid.cols-2, .grid.cols-3{grid-template-columns:1fr}
+  .nav-inner{align-items:flex-start;flex-direction:column}
+}
+@media (max-width:640px){
+  .hero-panel{padding:18px}
+  .card{padding:16px}
+  .button{width:100%}
+  .nav-links{width:100%}
+  .nav-links a{flex:1 1 calc(50% - 10px); text-align:center}
+  .brand{font-size:.98rem}
+}
+</style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Tiger Spark home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Tiger Spark • Developer Pages</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="">Overview</a>
+<a href="privacy-policy.html" class="active">Privacy Policy</a>
+<a href="support.html" class="">Support</a>
+<a href="marketing.html" class="">Marketing</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-panel tilt reveal">
+        <span class="badge depth"><span class="pulse"></span>Public privacy page</span>
+        <div class="hero-grid">
+          <div>
+            <h1 class="depth">Tiger Spark does not collect, store, or share personal data.</h1>
+            <p class="lead depth">This Privacy Policy is written to be explicit and easy to verify. The current version of Tiger Spark does not gather user information, does not retain it, and does not transfer it to third parties.</p>
+            <div class="cta depth"><a class="button primary" href="support.html">Privacy Questions</a><a class="button secondary" href="marketing.html">See App Direction</a></div>
+          </div>
+          <div class="card">
+            <div class="kicker">Developer</div>
+            <h3>Torsten Hecke</h3>
+            <p>Independent beginner iOS developer focused on building a clear, trustworthy, and improving product experience.</p>
+            <hr class="sep">
+            <div class="kicker">Application</div>
+            <h3>Tiger Spark</h3>
+            <p>Official public information page for App Store Connect review and for users who want transparent details about the developer and the app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+<section>
+  <div class="container">
+    <div class="card reveal">
+      <div class="kicker">Privacy statement</div>
+      <h2>Privacy Policy for Tiger Spark</h2>
+      <p>This Privacy Policy explains how Tiger Spark handles user information. The current version of the app does <strong>not collect, store, process, or share personal data</strong>.</p>
+      <div class="notice" style="margin-top:16px">
+        Tiger Spark does not collect user data, does not create user profiles, does not track activity across apps or websites, and does not send personal information to third parties.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid cols-2">
+      <div class="card reveal">
+        <h3>Data collection</h3>
+        <p>No personal information is collected by the app. This includes names, email addresses, phone numbers, location data, payment details, contacts, photos, identifiers, diagnostics linked to a user, and usage data linked to a user.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Data storage</h3>
+        <p>No user data is stored on servers, in external databases, or in developer-controlled systems because no such data is collected in the first place.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Data sharing</h3>
+        <p>No user data is sold, transmitted, rented, disclosed, or shared with third parties, analytics providers, advertisers, or brokers.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Account creation</h3>
+        <p>Tiger Spark does not currently require account registration or user sign-in to a developer-managed account system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid cols-2">
+      <div class="card reveal">
+        <div class="kicker">Children's privacy</div>
+        <h2>Children and sensitive data</h2>
+        <p>Because Tiger Spark does not collect personal data, it also does not knowingly collect data from children or sensitive personal information.</p>
+      </div>
+      <div class="card reveal">
+        <div class="kicker">Future changes</div>
+        <h2>If the app changes later</h2>
+        <p>If future versions introduce data collection, paid services, subscriptions, or account features, this Privacy Policy will be updated before or at the time those changes become available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="card reveal">
+      <div class="kicker">Contact</div>
+      <h2>Questions about privacy</h2>
+      <p>For privacy-related questions, users and reviewers can contact the developer directly.</p>
+      <div class="mail-box" style="margin-top:16px">
+        <code>torstenhecke88@icloud.com</code>
+        <a class="button primary" href="support.html">Open Support Page</a>
+      </div>
+      <p class="small" style="margin-top:16px">Developer: Torsten Hecke<br>App: Tiger Spark</p>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div>
+          <strong>Tiger Spark</strong><br>
+          <span class="small">Open information pages for App Store Connect, users, and support access.</span>
+        </div>
+        <div class="small">Developer: Torsten Hecke • Contact: torstenhecke88@icloud.com</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+const els = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+  });
+},{threshold:.12});
+els.forEach(el=>observer.observe(el));
+
+document.querySelectorAll('.tilt').forEach(card=>{
+  const update = (e)=>{
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const rx = ((y / r.height) - .5) * -6;
+    const ry = ((x / r.width) - .5) * 8;
+    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+  };
+  const reset = ()=> card.style.transform = '';
+  card.addEventListener('mousemove', update);
+  card.addEventListener('mouseleave', reset);
+  card.addEventListener('touchend', reset);
+});
+
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const text = btn.getAttribute('data-copy');
+    try{
+      await navigator.clipboard.writeText(text);
+      const old = btn.innerHTML;
+      btn.innerHTML = 'Copied';
+      setTimeout(()=>btn.innerHTML = old, 1200);
+    }catch(e){}
+  });
+});
+</script>
+</body>
+</html>
